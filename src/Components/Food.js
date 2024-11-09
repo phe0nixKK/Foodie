@@ -149,7 +149,9 @@ const Food = () => {
                     {msg}
                 </h2>
 
-                <div>
+                <div style={{
+                    "display":"flex"
+                }}>
                     <Cards detail={data} />
                 </div>
             </div>
