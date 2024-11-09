@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import { NavLink, json, useParams } from 'react-router-dom';
+import { NavLink, json, useParams, useSearchParams } from 'react-router-dom';
 import '../index.css';
 
 const Recipe = ({ detail }) => {
   const [data, setData] = useState()
   const { meal } = useParams();
+  console.log(meal);
+  
+
   const myFun = async () => {
-    // const get = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal}`);
-    const get = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`);
+    const get = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal}`);
+    // const get=await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal}`);
+    // const get = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`);
     const jsonData = await get.json();
     // console.log(jsonData.meals[0])
     setData(jsonData.meals[0])
   }
 
-  if (meal != "") {
-    myFun()
+  if (data != "") {
+    myFun();
   }
 
 

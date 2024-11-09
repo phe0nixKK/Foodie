@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 const Mealinfo = () => {
     const {mealid} = useParams();
     const [info, setInfo] = useState()
-    console.log(mealid);
+   //  console.log(mealid);
 
     const getInfo = async () =>{
         const get =  await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealid}`);

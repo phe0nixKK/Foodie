@@ -15,7 +15,7 @@ function App() {
       {/* <Mainpage /> */}
       <Routes>
         <Route path='/' element={<Food/>} />
-        <Route path='/:mealid' element={<Recipe />} />
+        <Route path='/:meal' element={<Recipe />} />
       </Routes>
     </div>
 
